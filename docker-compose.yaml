@@ -20,6 +20,10 @@ services:
 
   nginx:
     build: .docker/nginx
+    entrypoint: dockerize -template /var/www/.docker/nginx/template/nginx.conf:/var/www/.docker/nginx/nginx.conf sh /var/www/.docker/nginx/entrypoint.sh
+    environment:
+      - APP_HOST=app
+      - APP_PORT=9000
     container_name: nginx
     restart: always
     tty: true
