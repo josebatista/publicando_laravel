@@ -9,11 +9,11 @@ steps:
 
   - id: "Rodando composer"
     name: "gcr.io/cloud-builders/docker"
-    args: ["exec", "-t", "app", "sudo", "composer", "install"]
+    args: ["exec", "-t", "app", "composer", "install"]
 
   - id: "copiando .env"
     name: "gcr.io/cloud-builders/docker"
-    args: ["exec", "-t", "app", "sudo", "cp", ".env.example", ".env"]
+    args: ["exec", "-t", "app", "cp", ".env.example", ".env"]
 
   - id: "Rodando key:generate"
     name: "gcr.io/cloud-builders/docker"
