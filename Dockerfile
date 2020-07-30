@@ -21,8 +21,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # COPY . /var/www
 RUN ln -s public html
 
-# RUN usermod -u 1000 www-data
-# USER www-data
+RUN usermod -u 1000 www-data
+USER www-data
 
 EXPOSE 9000
 
